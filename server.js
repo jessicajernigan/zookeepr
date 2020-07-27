@@ -48,18 +48,18 @@ function filterByQuery(query, animalsArray) {
 
 
 
-  app.get('/api/animals', (req, res) => {
-    let results = animals;
-    if (req.query) {
-      results = filterByQuery(req.query, results);
-    }
-    res.json(results);
-  });
+app.get('/api/animals', (req, res) => {
+  let results = animals;
+  if (req.query) {
+    results = filterByQuery(req.query, results);
+  }
+  res.json(results);
+});
 
-  // 2 key takeaways from the above?
-  // The first is that the get() method requires two arguments. The first is a string that describes the route the client will have to fetch from. The second is a callback function that will execute every time that route is accessed with a GET request.
-  // The second takeaway is that we are using the send() method from the res parameter (short for response) to send the string Hello! to our client.
+// 2 key takeaways from the above?
+// The first is that the get() method requires two arguments. The first is a string that describes the route the client will have to fetch from. The second is a callback function that will execute every time that route is accessed with a GET request.
+// The second takeaway is that we are using the send() method from the res parameter (short for response) to send the string Hello! to our client.
 
-  app.listen(PORT, () => {
-    console.log(`API server now on port ${PORT}!`);
-  });
+app.listen(PORT, () => {
+  console.log(`API server now on port ${PORT}!`);
+});
