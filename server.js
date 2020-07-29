@@ -7,6 +7,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 // Parse incoming JSON data
 app.use(express.json());
+// Access static files
+app.use(express.static('public'));
 const { animals } = require('./data/animals');
 
 
@@ -111,6 +113,21 @@ app.get('/api/animals/:id', (req, res) => {
     res.send(404);
   }
 });
+
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
+app.get('/animals', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/animals.html'));
+});
+
+app.get('/zookeepers', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/zookeepers.html'));
+});
+
+
 
 // POST ROUTE
 app.post('/api/animals', (req, res) => {
