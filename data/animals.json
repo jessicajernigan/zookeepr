@@ -127,6 +127,16 @@
         "zany"
       ],
       "id": "12"
+    },
+    {
+      "name": "Lance",
+      "species": "Panda",
+      "diet": "folivore",
+      "personalityTraits": [
+        "hungry",
+        "loving"
+      ],
+      "id": "13"
     }
   ]
 }
